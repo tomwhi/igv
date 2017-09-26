@@ -53,6 +53,9 @@ public class TrackProperties {
 
     private Track.DisplayMode displayMode;
 
+    // Records whether or not to view items as pairs in this track; only pertains to
+    // tracks containing paired-end sequence read data:
+    private boolean viewAsPairs = false;
 
     /**
      * Base coordinate system,  either 0 or 1
@@ -430,6 +433,14 @@ public class TrackProperties {
 
     public Track.DisplayMode getDisplayMode() {
         return displayMode;
+    }
+
+    public Boolean getViewAsPairs() {
+        return viewAsPairs;
+    }
+
+    public void setViewAsPairs(boolean viewAsPairsStatus) {
+        viewAsPairs = viewAsPairsStatus;
     }
 
     public String getDataURL() {

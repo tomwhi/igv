@@ -439,6 +439,8 @@ public class ParsingUtils {
                             } else if ("arc".equals(value)) {
                                 trackProperties.setRendererClass(ArcRenderer.class);
                             }
+                        } else if (key.equals("viewAsPairs")) {
+                            trackProperties.setViewAsPairs(Boolean.parseBoolean(value));
                         } else if (key.toLowerCase().equals("viewlimits")) {
                             String[] limits = value.split(":");
                             if (limits.length == 2) {

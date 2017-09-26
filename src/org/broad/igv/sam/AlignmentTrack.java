@@ -880,6 +880,15 @@ public class AlignmentTrack extends AbstractTrack implements IGVEventObserver {
         }
     }
 
+    // Override setting of properties, to configure behaviour specific to the AlignmentTrack:
+    @Override
+    public void setProperties(TrackProperties properties) {
+        super.setProperties(properties);
+
+        // Set whether or not to view as pairs according to that specified property:
+        setViewAsPairs(properties.getViewAsPairs());
+    }
+
     /**
      * Split the screen so the current view and mate region are side by side.
      * Need a better name for this method.
